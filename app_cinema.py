@@ -15,7 +15,7 @@ def app_user():
 data = pd.read_csv('data_global.csv')
 
 # api key
-API_KEY = os.getenv("TMDB_API_KEY")
+API_KEY = st.secrets["API_KEY"]
 
 st.set_page_config(layout='wide')
 
@@ -407,8 +407,7 @@ data = pd.read_csv('data_global.csv')
 data.dropna(subset='genres', inplace=True)
 
 # api key
-
-API_KEY = os.getenv("TMDB_API_KEY")  # Récupère la clé depuis les secrets
+API_KEY = st.secrets["API_KEY"]
 
 st.set_page_config(layout='wide')
 
